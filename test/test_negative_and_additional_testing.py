@@ -1,6 +1,5 @@
 from playwright.sync_api import Playwright, sync_playwright, expect
 
-
 # Registration on the site without entering a password.
 def test_registration_page_with_empty_password(playwright: Playwright) -> None:
     browser = playwright.chromium.launch(headless=False)
