@@ -25,7 +25,6 @@ def test_registration_page_with_empty_user():
         page.wait_for_selector(".form-error-box.errorBox-message")
         browser.close()
 
-
 def test_registration_page_with_empty_email():
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=False)
@@ -46,6 +45,7 @@ def test_empty_email_authorization():
         wookie_login_page.goto_login_page()
         wookie_login_page.fill_login_form_with_empty_email("210793chychkalo")
         page.get_by_role("button", name="Увійти").click()
+        page.wait_for_timeout(1000)
         browser.close()
 
 
@@ -57,6 +57,7 @@ def test_empty_password_authorization():
         wookie_login_page.goto_login_page()
         wookie_login_page.fill_login_form_with_empty_password("darya.chichkalo@gmail.com")
         page.get_by_role("button", name="Увійти").click()
+        page.wait_for_timeout(1000)
         browser.close()
 
 

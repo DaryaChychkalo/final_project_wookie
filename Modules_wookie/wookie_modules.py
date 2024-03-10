@@ -1,4 +1,4 @@
-from playwright.sync_api import Page, expect
+from playwright.sync_api import Page
 
 class WookiePage:
     def __init__(self, page: Page):
@@ -118,7 +118,7 @@ class WookiePage:
         self.page.locator("#login_form_id input[name=\"user\\[email\\]\"]").fill(email)
 
     def expect_error_message_empty_password(self):
-        return self.page.locator("text=Вкажіть пароль")
+        self.page.locator("text=Вкажіть пароль")
 
     def open_mobile_version(self):
         self.page.goto("https://wookie.com.ua/ua/")

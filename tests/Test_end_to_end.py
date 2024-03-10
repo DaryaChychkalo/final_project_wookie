@@ -23,7 +23,6 @@ def test_buy_products(browser, login_data):
         wookie_page.open_homepage()
 
         wookie_page.login(login_data['email'], login_data['password'])
-        page.pause()
         wookie_page.search_for_product("Бездротові навушники Xiaomi Buds 3")
         wookie_page.add_product_to_cart("Бездротові навушники Xiaomi Buds 3 (BHR5526GL) - White")
         wookie_page.go_to_catalog()
